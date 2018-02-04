@@ -1,6 +1,8 @@
 package Isip
 
-import "strconv"
+import (
+	"strconv"
+)
 
 func CheckIP(ip string) bool {
 	dot := 0
@@ -36,4 +38,15 @@ func CheckIP(ip string) bool {
 		}
 	}
 	return true
+}
+
+func RemAlphaNum(str string) string {
+	modf := ""
+	for i:=0;i<len(str);i++{
+		if (str[i]>=48&&str[i]<=57)||(str[i]>=65&&str[i]<=90)||(str[i]>=97&&str[i]<=122){
+			x:=(string)(str[i])
+			modf=modf+x		
+		}
+	}
+	return modf
 }
